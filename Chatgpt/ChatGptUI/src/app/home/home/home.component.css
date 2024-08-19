@@ -1,0 +1,64 @@
+/* Centering the Chat Container */
+.chat-container {
+  background-color: #2b3a42; /* Metallic Blue background matching the navbar */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px; /* Set a fixed width for the rectangular form */
+  margin: 100px auto; /* Center the form horizontally and add margin from the top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.output-text-area {
+  background-color: #1f2a30; /* Slightly darker background for contrast */
+  color: white; /* White text color */
+  border: 1px solid #ff69b4; /* Pink border matching the buttons */
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem; /* Slightly larger text */
+  margin-bottom: 20px; /* Space below the output text */
+  width: 100%; /* Full width */
+  height: 150px; /* Fixed height */
+  resize: none; /* Disable resizing */
+}
+
+/* Chat Input Field */
+.chat-input {
+  background-color: #2b3a42; /* Match the input background to the container */
+  color: white; /* White text color */
+  border: 1px solid #ff69b4; /* Pink border matching the buttons */
+  padding: 10px;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  font-weight: bold; /* Make the input text bold */
+  width: calc(100% - 85px); /* Adjust width to accommodate the Send button */
+}
+
+.chat-input::placeholder {
+  color: #ff69b4; /* Pink placeholder text */
+  opacity: 0.7; /* Slight transparency for placeholder */
+}
+
+/* Send Button */
+.chat-send-button {
+  background-color: #ff69b4; /* Pink Button */
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 75px; /* Fixed width for the button */
+}
+
+.chat-send-button:hover {
+  background-color: #ff4da6; /* Darker pink on hover */
+}
+
+.chat-send-button:focus,
+.chat-send-button:active {
+  background-color: #ff3380; /* Even darker pink on active */
+  box-shadow: none;
+  outline: none;
+}

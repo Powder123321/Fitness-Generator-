@@ -1,0 +1,40 @@
+/* Navbar Styles */
+.custom-navbar {
+  background-color: #2b3a42; /* Metallic Blue */
+}
+
+.text-pink {
+  color: #ff69b4; /* Pink Color */
+}
+
+.navbar-brand.text-pink,
+.nav-link.text-pink {
+  color: #ff69b4;
+  font-weight: bold; /* Make the text bold */
+}
+
+.nav-link.text-pink:hover {
+  color: #ff4da6; /* Slightly darker pink on hover */
+}
+
+.btn-pink {
+  background-color: #ff69b4; /* Pink Button */
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.btn-pink:hover {
+  background-color: #ff4da6; /* Darker pink on hover */
+  color: white;
+}
+
+.btn-pink:focus,
+.btn-pink:active {
+  background-color: #ff3380; /* Even darker pink on active */
+  color: white;
+  box-shadow: none;
+  outline: none;
+}

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg custom-navbar bg-light">
+  <a class="navbar-brand text-pink fw-bold" href="#">Berry AI</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <!-- Show login/register links if not logged in -->
+      <ng-container *ngIf="!isUserLoggedIn">
+        <li class="nav-item">
+          <a
+            class="nav-link text-pink fw-bold"
+            routerLink="/login"
+            routerLinkActive="active"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-pink fw-bold"
+            routerLink="/register"
+            routerLinkActive="active"
+            >Register</a
+          >
+        </li>
+      </ng-container>
+      <!-- Show logout button if logged in -->
+      <ng-container *ngIf="isUserLoggedIn">
+        <li class="nav-item">
+          <button class="btn btn-pink fw-bold" (click)="logout()">
+            Logout
+          </button>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</nav>

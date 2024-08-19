@@ -1,0 +1,55 @@
+/* Full-height utility class */
+.vh-100 {
+  height: 100vh;
+}
+
+/* Styling for the login card */
+.login-card {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px; /* Rounded corners */
+  background-color: #1c3b70; /* Metallic blue background */
+  color: white; /* White text color */
+}
+
+/* Card body with padding */
+.login-card-body {
+  padding: 20px;
+}
+
+/* Title styling */
+.login-card-title {
+  font-weight: bold;
+  color: #ff69b4; /* Pink color to match the button */
+}
+
+/* Styling the input fields */
+.form-control {
+  background-color: #f8f9fa; /* Light grey background for inputs */
+  border: 1px solid #ced4da; /* Light border for inputs */
+  color: #1c3b70; /* Text color inside inputs */
+}
+
+/* Pink button styling */
+.btn-pink {
+  background-color: #ff69b4; /* Pink color for the button */
+  border-color: #ff69b4;
+  color: white; /* White text on the button */
+}
+
+/* Pink button hover effect */
+.btn-pink:hover {
+  background-color: #ff85c0; /* Lighter pink on hover */
+  border-color: #ff85c0;
+}
+
+/* Adjust the label color */
+.form-label {
+  color: white; /* White color for the labels */
+}
+
+/* Input focus state */
+.form-control:focus {
+  border-color: #ff69b4; /* Pink border on focus */
+  box-shadow: none; /* No shadow on focus */
+}

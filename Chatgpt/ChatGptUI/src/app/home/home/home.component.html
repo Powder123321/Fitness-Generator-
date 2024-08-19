@@ -1,0 +1,18 @@
+<div class="chat-container">
+  <form (ngSubmit)="sendMessage()" class="chat-form">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control chat-input"
+        placeholder="Type your message..."
+        [(ngModel)]="input"
+        required
+        name="input"
+      />
+      <button type="submit" class="btn btn-pink chat-send-button">Send</button>
+    </div>
+  </form>
+</div>
+<div class="chat-container">
+  <textarea class="output-text-area" readonly>{{ output }}</textarea>
+</div>

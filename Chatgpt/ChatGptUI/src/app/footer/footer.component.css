@@ -1,0 +1,84 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  background-color: #ff69b4; /* Culoarea roz */
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed; /* Fixează footer-ul la baza paginii */
+  bottom: 0; /* Asigură că footer-ul este la baza paginii */
+  width: 100%; /* Asigură că footer-ul se extinde pe toată lățimea paginii */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Adaugă umbră pentru efect vizual */
+  z-index: 1000; /* Asigură că footer-ul este deasupra altor elemente */
+}
+
+.footer .container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  color: #ffffff; /* Text color for readability */
+}
+
+.contact-info h3 {
+  margin: 0 0 10px 0; /* Margin for heading */
+  font-size: 1.2rem; /* Font size for the heading */
+  color: #ffffff; /* White color for the heading */
+}
+
+.contact-info p {
+  margin: 5px 0; /* Margin for each contact item */
+  font-size: 1rem; /* Font size for contact information */
+  color: #ffffff; /* White color for text */
+}
+
+.social-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+}
+
+.social-icon {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.social-icon:hover {
+  color: #ff1493; /* Change color on hover */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-media {
+    margin-top: 10px;
+  }
+}
