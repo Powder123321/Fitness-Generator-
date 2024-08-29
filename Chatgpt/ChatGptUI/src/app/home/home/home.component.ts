@@ -10,9 +10,14 @@ import { response } from 'express';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
+  weight: any;
+  age: any;
+
   message: string | null = null;
   input: string = '';
   output: string = '';
+  gender: any;
+  height: any;
   constructor(
     private http: HttpClient,
     private router: Router,
