@@ -1,34 +1,19 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Injectable, model, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserInfo } from '../../Interfaces/UserInfo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OpenaiService implements OnInit {
-  baseUrl = 'http://localhost:5247/api/prompt?';
+  baseUrl = 'http://localhost:5247/api/Program/GenerateWorkoutProgram';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
   ngOnInit(): void {}
 
-  sendMessageService(input: string): Observable<any> {
-    console.log(input, 'this is the input');
-
-    const params = new HttpParams().set('input', input);
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-
-    const response = this.http.get(this.baseUrl, {
-      params,
-      headers,
-      responseType: 'text',
-    }) as Observable<string>;
-
-    console.log(response, 'response from service');
-
-    return response;
+  sendMessageService(userInfo: UserInfo): Observable<string> {
+    console.log(userInfo);
+    return this.http.post<string>(this.baseUrl, userInfo);
   }
 }

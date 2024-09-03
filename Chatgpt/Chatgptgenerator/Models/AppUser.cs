@@ -1,4 +1,6 @@
-﻿namespace Chatgptgenerator;
+﻿using Chatgptgenerator.Models;
+
+namespace Chatgptgenerator;
 
 public class AppUser
 {
@@ -8,8 +10,4 @@ public class AppUser
     public required byte[] PasswordHash { get; set; }
 
     public required byte[] PasswordSalt { get; set; }
-
-
-
-
 }

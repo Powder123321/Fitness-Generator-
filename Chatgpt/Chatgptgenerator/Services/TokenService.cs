@@ -19,9 +19,6 @@ public class TokenService : ITokenService
         }
 
         _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey));
-
-
-
     }
 
     public string CreateToken(AppUser user)
@@ -41,6 +38,5 @@ public class TokenService : ITokenService
         var tokenHandler = new JwtSecurityTokenHandler();
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(token);
-
     }
 }

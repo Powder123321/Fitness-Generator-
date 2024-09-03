@@ -1,17 +1,19 @@
+using Microsoft.OpenApi.Any;
+
 namespace Chatgptgenerator.Models;
 
 public class UserInfo
 {
+    public int Id { get; set; }
     public required string UserName { get; set; }
-    // prop despre user pt ca chatgpt sa poata faca un program 
-
     public required string Gender { get; set; }
-    public int Weight { get; set; }
+    public double Weight { get; set; }
 
-    public int Height { get; set; }
+    public double Height { get; set; }
 
     public int Age { get; set; }
 
-    public int MyProperty { get; set; }
+    public required string Token { get; set; }
 
+    public required string WorkoutProgram { get; set; }
 }

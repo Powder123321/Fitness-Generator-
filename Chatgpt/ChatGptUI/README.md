@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+Userul este in componenta de Home
+-> completeaza informatiile despre el
+-> apasa pe generateworkout
+-> obiectul UserInfo cu datele pe care le-a completat sunt trimise in backend in metoda ProgramController.GenerateWorkoutProgram()
+-> se generaza workout-ul pe baza obiectului UserInfo primit din frontend si se stocheaza in tabela UserInfo din baza de date
+->

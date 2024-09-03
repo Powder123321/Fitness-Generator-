@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 using Chatgptgenerator.Data;
+using Chatgptgenerator.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,9 +19,6 @@ public class AccountController : BaseApiController
         _tokenService = tokenService;
     }
 
-
-
-
     [HttpPost("register")]
 
 
@@ -35,7 +33,7 @@ public class AccountController : BaseApiController
         {
             Username = registerDto.Username.ToLower(),
             PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-            PasswordSalt = hmac.Key
+            PasswordSalt = hmac.Key,
         };
 
         _appDbContext.Users.Add(user);
@@ -46,19 +44,11 @@ public class AccountController : BaseApiController
             Username = user.Username,
             Token = _tokenService.CreateToken(user)
         };
-
-
-
-
-
     }
 
     private async Task<bool> UserExists(string username)
     {
         return await _appDbContext.Users.AnyAsync(x => x.Username == username.ToLower());
-
-
-
     }
 
 
@@ -88,9 +78,4 @@ public class AccountController : BaseApiController
         };
 
     }
-
-
-
-
-
 }

@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { OpenaiService } from '../../Services/openai.service';
-import { response } from 'express';
+import { UserInfo } from '../../../Interfaces/UserInfo';
 
 @Component({
   selector: 'app-home',
@@ -10,25 +8,23 @@ import { response } from 'express';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  weight: any;
-  age: any;
+  input: UserInfo = {
+    gender: '',
+    weight: 0,
+    height: 0,
+    age: 0,
+    token: '',
+    workoutprogram: '',
+  };
 
-  message: string | null = null;
-  input: string = '';
-  output: string = '';
-  gender: any;
-  height: any;
-  constructor(
-    private http: HttpClient,
-    private router: Router,
-    private openaiService: OpenaiService
-  ) {}
+  output: any = '';
+
+  constructor(private openaiService: OpenaiService) {}
   sendMessage() {
     this.openaiService.sendMessageService(this.input).subscribe({
       next: (response) => (
         (this.output = response), console.log(response, 'response from home')
       ),
-
       error: (error) => console.error('Error occurred:', error),
       complete: () => console.log('Request complete'),
     });
