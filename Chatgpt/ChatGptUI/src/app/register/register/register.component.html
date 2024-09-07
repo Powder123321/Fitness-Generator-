@@ -2,14 +2,14 @@
   <div class="register-card p-4 shadow-sm">
     <div class="register-card-body">
       <h4 class="register-card-title text-center mb-4">Register</h4>
-      <form>
+      <form (ngSubmit)="registerForm()" #registerFormForm="ngForm">
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
           <input
             required
             minlength="3"
             maxlength="10"
-            ngModel
+            [(ngModel)]="model.username"
             name="username"
             #username="ngModel"
             type="text"
@@ -34,6 +34,8 @@
             type="email"
             class="form-control"
             id="email"
+            name="email"
+            [(ngModel)]="model.email"
             aria-describedby="emailHelp"
           />
           <div id="emailHelp" class="form-text">
@@ -46,7 +48,7 @@
             required
             minlength="3"
             maxlength="10"
-            ngModel
+            [(ngModel)]="model.password"
             #password="ngModel"
             name="password"
             type="password"
@@ -71,7 +73,7 @@
           >
           <input
             required
-            ngModel
+            [(ngModel)]="model.confirmPassword"
             #confirmPassword="ngModel"
             name="confirmPassword"
             type="password"

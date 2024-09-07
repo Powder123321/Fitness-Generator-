@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\Chatgptgenerator.csproj": {}
+    "C:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\Chatgptgenerator.csproj": {}
   },
   "projects": {
-    "c:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\Chatgptgenerator.csproj": {
+    "C:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\Chatgptgenerator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\Chatgptgenerator.csproj",
+        "projectUniqueName": "C:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\Chatgptgenerator.csproj",
         "projectName": "Chatgptgenerator",
-        "projectPath": "c:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\Chatgptgenerator.csproj",
+        "projectPath": "C:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\Chatgptgenerator.csproj",
         "packagesPath": "C:\\Users\\Andrei\\.nuget\\packages\\",
-        "outputPath": "c:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\obj\\",
+        "outputPath": "C:\\GitHubRepos\\Chatgpt\\Chatgptgenerator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrei\\AppData\\Roaming\\NuGet\\NuGet.Config",

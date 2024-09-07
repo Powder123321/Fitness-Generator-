@@ -36,6 +36,8 @@ namespace Chatgptgenerator.Controllers
             var gptMessage = $"Generate a workout program for a {userInfo.Age} years old {userInfo.Gender} with {userInfo.Height} and {userInfo.Weight}";
             string workoutProgram = await _promptService.TriggerOpenAI(gptMessage);
 
+            userInfo.WorkoutProgram = workoutProgram;
+
             _appDbContext.UserInfo.Add(userInfo);
 
             await _appDbContext.SaveChangesAsync();

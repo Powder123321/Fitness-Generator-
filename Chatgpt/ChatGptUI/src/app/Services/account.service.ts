@@ -3,6 +3,7 @@ import { User } from '../../Interfaces/user';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { RegisterUser } from '../../Interfaces/Register';
 
 @Injectable({
   providedIn: 'root',
@@ -33,5 +34,12 @@ export class AccountService implements OnInit {
     localStorage.removeItem('user');
 
     this.router.navigate(['/aboutus']);
+  }
+  register(model: any): Observable<RegisterUser> {
+    return this.http.post<RegisterUser>(this.baseUrl + '/register', model).pipe(
+      map((response: RegisterUser) => {
+        return response;
+      })
+    );
   }
 }
