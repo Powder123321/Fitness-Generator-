@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AccountService } from '../Services/account.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,11 @@ export class LoginComponent {
   isUserLoggedIn: boolean = false;
   model: any = {};
 
-  constructor(private accountService: AccountService, private router: Router) {}
+  constructor(
+    private accountService: AccountService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
   ngOnInit(): void {}
 
   login() {
@@ -23,7 +28,7 @@ export class LoginComponent {
             window.location.reload();
           });
         },
-        error: (error) => console.log('Login error:', error),
+        error: (error) => this.toastr.error(error.error),
       });
     }
   }

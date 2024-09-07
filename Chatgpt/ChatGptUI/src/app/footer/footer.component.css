@@ -1,19 +1,7 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .footer {
   background-color: #ff69b4; /* Culoarea roz */
   color: #ffffff;
-  padding: 20px 0;
+  padding: 10px 0; /* Reduce padding-ul pentru a micșora înălțimea */
   text-align: center;
   position: fixed; /* Fixează footer-ul la baza paginii */
   bottom: 0; /* Asigură că footer-ul este la baza paginii */
@@ -26,50 +14,38 @@ body {
   width: 80%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-.contact-info {
-  flex: 1;
-  color: #ffffff; /* Text color for readability */
-}
-
-.contact-info h3 {
-  margin: 0 0 10px 0; /* Margin for heading */
-  font-size: 1.2rem; /* Font size for the heading */
-  color: #ffffff; /* White color for the heading */
-}
-
-.contact-info p {
-  margin: 5px 0; /* Margin for each contact item */
-  font-size: 1rem; /* Font size for contact information */
-  color: #ffffff; /* White color for text */
+.line {
+  width: 100%; /* Liniile se întind pe toată lățimea container-ului */
+  border-top: 2px solid #ffffff; /* Culoarea și grosimea liniei */
+  margin: 5px 0; /* Reduce marginea pentru a micșora spațiul între linie și iconițe */
 }
 
 .social-media {
-  flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
+  margin: 5px 0; /* Reduce spațiul între linii și iconițe */
 }
 
 .social-icon {
-  margin: 0 10px;
+  margin: 0 8px; /* Ajustează marginea pentru iconițe */
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Ajustează dimensiunea iconițelor dacă este necesar */
 }
 
 .social-icon:hover {
-  color: #ff1493; /* Change color on hover */
+  color: #ff1493; /* Schimbă culoarea la hover */
 }
 
 @media (max-width: 768px) {
@@ -79,6 +55,6 @@ body {
   }
 
   .social-media {
-    margin-top: 10px;
+    margin-top: 5px; /* Ajustează spațiul pentru dispozitive mai mici */
   }
 }
