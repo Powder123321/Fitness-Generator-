@@ -405,7 +405,6 @@ C:\GitHubRepos\Chatgpt\Chatgptgenerator\obj\Debug\net8.0\Chatgptgenerator.Assemb
 C:\GitHubRepos\Chatgpt\Chatgptgenerator\obj\Debug\net8.0\Chatgptgenerator.csproj.CoreCompileInputs.cache
 C:\GitHubRepos\Chatgpt\Chatgptgenerator\obj\Debug\net8.0\Chatgptgenerator.MvcApplicationPartsAssemblyInfo.cs
 C:\GitHubRepos\Chatgpt\Chatgptgenerator\obj\Debug\net8.0\Chatgptgenerator.MvcApplicationPartsAssemblyInfo.cache
-C:\GitHubRepos\Chatgpt\Chatgptgenerator\obj\Debug\net8.0\Chatgptgenerator.sourcelink.json
 C:\GitHubRepos\Chatgpt\Chatgptgenerator\obj\Debug\net8.0\staticwebassets.build.json
 C:\GitHubRepos\Chatgpt\Chatgptgenerator\obj\Debug\net8.0\staticwebassets.development.json
 C:\GitHubRepos\Chatgpt\Chatgptgenerator\obj\Debug\net8.0\staticwebassets\msbuild.Chatgptgenerator.Microsoft.AspNetCore.StaticWebAssets.props

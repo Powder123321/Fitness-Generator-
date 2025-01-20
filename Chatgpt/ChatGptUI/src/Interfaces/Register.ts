@@ -2,5 +2,5 @@ export interface RegisterUser {
   username: string;
   password: string;
   email: string;
-  confidmPassword: string;
+  confirmPassword: string;
 }

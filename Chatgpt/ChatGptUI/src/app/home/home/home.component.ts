@@ -8,6 +8,7 @@ import { UserInfo } from '../../../Interfaces/UserInfo';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
+  saveMessage() {}
   input: UserInfo = {
     gender: '',
     weight: 0,
@@ -20,6 +21,17 @@ export class HomeComponent implements OnInit {
   output: any = '';
 
   constructor(private openaiService: OpenaiService) {}
+  leftGalleryItems = [
+    { image: 'assets/meditation.jpeg', text: 'Textul 1' },
+    { image: 'assets/food.webp', text: 'Textul 2' },
+    // Adaugă mai multe imagini dacă este necesar
+  ];
+
+  rightGalleryItems = [
+    { image: 'assets/runnin.webp', text: 'Textul 3' },
+    { image: 'assets/todolist.webp', text: 'Textul 4' },
+    // Adaugă mai multe imagini dacă este necesar
+  ];
   sendMessage() {
     this.openaiService.sendMessageService(this.input).subscribe({
       next: (response) => (

@@ -8,7 +8,7 @@
           <input
             required
             minlength="3"
-            maxlength="10"
+            maxlength="30"
             [(ngModel)]="model.username"
             name="username"
             #username="ngModel"
@@ -47,7 +47,7 @@
           <input
             required
             minlength="3"
-            maxlength="10"
+            maxlength="30"
             [(ngModel)]="model.password"
             #password="ngModel"
             name="password"
@@ -89,7 +89,13 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-pink w-100">Register</button>
+        <button
+          [disabled]="!registerFormForm.valid"
+          type="submit"
+          class="btn btn-pink w-100"
+        >
+          Register
+        </button>
       </form>
     </div>
   </div>
