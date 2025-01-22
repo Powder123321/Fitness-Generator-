@@ -9,16 +9,8 @@ import { UserInfo } from '../../../Interfaces/UserInfo';
 })
 export class HomeComponent implements OnInit {
   saveMessage() {}
-  input: UserInfo = {
-    gender: '',
-    weight: 0,
-    height: 0,
-    age: 0,
-    token: '',
-    workoutprogram: '',
-  };
-
-  output: any = '';
+  input: any = '';
+  output: any = {};
 
   constructor(private openaiService: OpenaiService) {}
   leftGalleryItems = [

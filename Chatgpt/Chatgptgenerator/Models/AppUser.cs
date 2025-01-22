@@ -1,9 +1,11 @@
-﻿using Chatgptgenerator.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using Chatgptgenerator.Models;
 
 namespace Chatgptgenerator;
 
 public class AppUser
 {
+    [Key]
     public int Id { get; set; }
     public required string Username { get; set; }
 

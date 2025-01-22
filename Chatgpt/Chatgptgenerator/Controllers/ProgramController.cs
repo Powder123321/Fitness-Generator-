@@ -20,23 +20,21 @@ namespace Chatgptgenerator.Controllers
             _appDbContext = appDbContext;
         }
         [HttpPost("GenerateWorkoutProgram")]
-        public async Task<IActionResult> GenerateWorkoutProgram([FromBody] UserInfo userInfo)
+        public async Task<IActionResult> GenerateWorkoutProgram([FromBody] MessageDto messageDto)
         {
-            var handler = new JwtSecurityTokenHandler();
-            var token = handler.ReadJwtToken(userInfo.Token);
 
-            var usernameClaim = token.Claims.FirstOrDefault(claim => claim.Type == "nameid");
-            if (usernameClaim == null)
-            {
-                return BadRequest("Invalid token: Username not found.");
-            }
 
-            var username = usernameClaim.Value;
-
-            var gptMessage = $"Generate a workout program for a {userInfo.Age} years old {userInfo.Gender} with {userInfo.Height} and {userInfo.Weight}";
+            var gptMessage = $"Generate a workout program for {messageDto.UserName}.";
             string workoutProgram = await _promptService.TriggerOpenAI(gptMessage);
 
-            userInfo.WorkoutProgram = workoutProgram;
+            messageDto.WorkoutProgram = workoutProgram;
+
+            var userInfo = new UserInfo
+            {
+                UserName = messageDto.UserName,
+                WorkoutProgram = messageDto.WorkoutProgram,
+
+            };
 
             _appDbContext.UserInfo.Add(userInfo);
 
@@ -55,5 +53,15 @@ namespace Chatgptgenerator.Controllers
             }
             return NotFound("User not found");
         }
-    }
+
+    };
+
+
+
+
+
+
+
+
+
 }

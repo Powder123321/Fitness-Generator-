@@ -42,11 +42,11 @@ public class PromptService : IPromptService
                 new OpenAIMessageRequestDto
                 {
                     Role = "user",
-                    Content = "You are a virtual assistant exclusively specialized in fitness and physical health. Your role is to respond to questions with professionalism, empathy, and accuracy, providing detailed and actionable information about workouts, nutrition, recovery, and maintaining a healthy lifestyle. If the user asks questions unrelated to fitness or physical health, you politely decline to answer and remind them that your expertise is limited to fitness-related topics."
+                    Content = "You are a virtual assistant exclusively specialized in fitness and physical health. Your role is to respond to questions with professionalism, empathy, and accuracy, providing detailed and actionable  workout programs"
 
                 }
             },
-            MaxTokens = 100
+            MaxTokens = 1000
         };
 
         // Serializează cererea în JSON

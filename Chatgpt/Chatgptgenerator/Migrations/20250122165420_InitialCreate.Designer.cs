@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chatgptgenerator.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240801150512_InitialCreate")]
+    [Migration("20250122165420_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -40,6 +40,24 @@ namespace Chatgptgenerator.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Chatgptgenerator.Models.UserInfo", b =>
+                {
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("WorkoutProgram")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("UserName");
+
+                    b.ToTable("UserInfo");
                 });
 #pragma warning restore 612, 618
         }
