@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { UserInfo } from '../../Interfaces/UserInfo';
 
 @Injectable({
@@ -13,7 +13,10 @@ export class OpenaiService implements OnInit {
   ngOnInit(): void {}
 
   sendMessageService(userInfo: UserInfo): Observable<string> {
-    console.log(userInfo);
-    return this.http.post<string>(this.baseUrl, userInfo);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(this.baseUrl, userInfo, {
+      headers,
+      responseType: 'text',
+    });
   }
 }

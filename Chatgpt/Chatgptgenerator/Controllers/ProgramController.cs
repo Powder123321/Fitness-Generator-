@@ -22,26 +22,38 @@ namespace Chatgptgenerator.Controllers
         [HttpPost("GenerateWorkoutProgram")]
         public async Task<IActionResult> GenerateWorkoutProgram([FromBody] MessageDto messageDto)
         {
-
-
+            // Construim mesajul pentru OpenAI
             var gptMessage = $"Generate a workout program for {messageDto.UserName}.";
             string workoutProgram = await _promptService.TriggerOpenAI(gptMessage);
 
-            messageDto.WorkoutProgram = workoutProgram;
+            // Verificăm dacă utilizatorul există deja în baza de date
+            var existingUser = await _appDbContext.UserInfo
+                .FirstOrDefaultAsync(u => u.UserName == messageDto.UserName);
 
-            var userInfo = new UserInfo
+            if (existingUser != null)
             {
-                UserName = messageDto.UserName,
-                WorkoutProgram = messageDto.WorkoutProgram,
+                // Dacă utilizatorul există, actualizăm programul de fitness
+                existingUser.WorkoutProgram = workoutProgram;
+            }
+            else
+            {
+                // Dacă utilizatorul nu există, creăm un nou utilizator
+                var userInfo = new UserInfo
+                {
+                    UserName = messageDto.UserName,
+                    WorkoutProgram = workoutProgram,
+                };
 
-            };
+                _appDbContext.UserInfo.Add(userInfo);
+            }
 
-            _appDbContext.UserInfo.Add(userInfo);
-
+            // Salvăm modificările în baza de date
             await _appDbContext.SaveChangesAsync();
 
+            // Returnăm programul de fitness generat
             return Ok(workoutProgram);
         }
+
 
         [HttpGet("GetWorkoutProgram/{username}")]
         public async Task<IActionResult> GetWorkoutProgram(string username)

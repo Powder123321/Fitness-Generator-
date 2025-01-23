@@ -1,6 +1,6 @@
+import { UserInfo } from './../../../Interfaces/UserInfo';
 import { Component, OnInit } from '@angular/core';
 import { OpenaiService } from '../../Services/openai.service';
-import { UserInfo } from '../../../Interfaces/UserInfo';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import { UserInfo } from '../../../Interfaces/UserInfo';
 export class HomeComponent implements OnInit {
   saveMessage() {}
   input: any = '';
-  output: any = {};
+  output: any = '';
 
   constructor(private openaiService: OpenaiService) {}
   leftGalleryItems = [
@@ -25,7 +25,8 @@ export class HomeComponent implements OnInit {
     // Adaugă mai multe imagini dacă este necesar
   ];
   sendMessage() {
-    this.openaiService.sendMessageService(this.input).subscribe({
+    const userInfo = { userName: this.input, workoutProgram: '' };
+    this.openaiService.sendMessageService(userInfo).subscribe({
       next: (response) => (
         (this.output = response), console.log(response, 'response from home')
       ),
