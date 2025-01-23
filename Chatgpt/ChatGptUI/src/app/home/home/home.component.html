@@ -10,7 +10,7 @@
   <!-- Secțiune Chat -->
   <div class="chat-container">
     <!-- Form pentru Input -->
-    <form (ngSubmit)="sendMessage()" class="chat-form">
+    <form #form="ngForm" (ngSubmit)="sendMessage()" class="chat-form">
       <div class="input-group">
         <input
           type="text"
@@ -20,7 +20,11 @@
           required
           name="input"
         />
-        <button type="submit" class="btn btn-pink chat-send-button">
+        <button
+          [disabled]="form.invalid"
+          type="submit"
+          class="btn btn-pink chat-send-button"
+        >
           Send
         </button>
       </div>
@@ -29,7 +33,7 @@
     <!-- Secțiunea de Răspuns -->
     <div class="output-section">
       <textarea class="output-text-area form-control" readonly>{{
-        output.message
+        output
       }}</textarea>
       <button
         class="btn btn-pink save-button"
@@ -49,4 +53,3 @@
     </div>
   </div>
 </div>
-/* Stilizare pentru containerul principal */

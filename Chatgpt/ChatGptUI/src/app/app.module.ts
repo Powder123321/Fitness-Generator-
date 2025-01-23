@@ -21,6 +21,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MeditationComponent } from './meditation/meditation.component';
+import { RunningComponent } from './running/running.component';
+import { FoodComponent } from './food/food.component';
+import { TodolistComponent } from './todolist/todolist.component';
+import { SavingsComponent } from './savings/savings.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     AboutUsComponent,
     FooterComponent,
+    MeditationComponent,
+    RunningComponent,
+    FoodComponent,
+    TodolistComponent,
+    SavingsComponent,
   ],
   imports: [
     BrowserModule,
